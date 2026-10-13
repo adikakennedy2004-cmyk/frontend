@@ -1,16 +1,87 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  color-scheme: dark;
-  --background: #0d120f;
-  --foreground: #edf1eb;
+  color-scheme: light;
+  --background: oklch(0.985 0.003 80);
+  --foreground: oklch(0.26 0.025 145);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.025 145);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.025 145);
+  --primary: oklch(0.34 0.062 145);
+  --primary-foreground: oklch(0.985 0.003 80);
+  --secondary: oklch(0.95 0.012 145);
+  --secondary-foreground: oklch(0.34 0.062 145);
+  --muted: oklch(0.96 0.006 80);
+  --muted-foreground: oklch(0.51 0.018 145);
+  --accent: oklch(0.95 0.012 145);
+  --accent-foreground: oklch(0.34 0.062 145);
+  --destructive: oklch(0.55 0.2 25);
+  --border: oklch(0.9 0.009 145);
+  --input: oklch(0.9 0.009 145);
+  --ring: oklch(0.57 0.06 145);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 html {
@@ -18,9 +89,7 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -44,4 +113,252 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+main[data-theme="dark"] {
+  color-scheme: dark;
+  background: #111811 !important;
+  color: #e8eee4 !important;
+}
+
+main[data-theme="dark"] header {
+  border-color: #2c372b !important;
+  background: rgb(20 29 21 / 95%) !important;
+}
+
+main[data-theme="dark"] header a span,
+main[data-theme="dark"] footer a,
+main[data-theme="dark"] #home > div > div p,
+main[data-theme="dark"] #how-it-works h3 {
+  color: #e2eadd !important;
+}
+
+main[data-theme="dark"] header nav a,
+main[data-theme="dark"] header a span span:last-child {
+  color: #bac7b5 !important;
+}
+
+main[data-theme="dark"] header button {
+  border-color: #3a4738 !important;
+  background: #202c21 !important;
+  color: #c4d5b8 !important;
+}
+
+main[data-theme="dark"] #home > div > p:first-child {
+  border-color: #394735 !important;
+  background: #202b20 !important;
+  color: #c1d3b1 !important;
+}
+
+main[data-theme="dark"] #home h1,
+main[data-theme="dark"] #opportunities h2,
+main[data-theme="dark"] #apply h2,
+main[data-theme="dark"] #how-it-works h2 {
+  color: #e7ede1 !important;
+}
+
+main[data-theme="dark"] #home h1 span,
+main[data-theme="dark"] #opportunities > div > div:first-child > p,
+main[data-theme="dark"] #apply > div > div:first-child > p,
+main[data-theme="dark"] #how-it-works > div > div:first-child > p {
+  color: #a8c094 !important;
+}
+
+main[data-theme="dark"] #home > div > p:not(:first-child),
+main[data-theme="dark"] #opportunities > div > div:first-child > div > p,
+main[data-theme="dark"] #opportunities article > div > p,
+main[data-theme="dark"] #apply > div > div:first-child > p:last-child,
+main[data-theme="dark"] #how-it-works > div > div:first-child > p:last-of-type,
+main[data-theme="dark"] #how-it-works li p,
+main[data-theme="dark"] footer p {
+  color: #aab5a5 !important;
+}
+
+main[data-theme="dark"] #home > div > div.border-t {
+  border-color: #303b2d !important;
+}
+
+main[data-theme="dark"] #opportunities {
+  border-color: #2c372b !important;
+  background: #151d16 !important;
+}
+
+main[data-theme="dark"] #opportunities label {
+  border-color: #364135 !important;
+  background: #1b251c !important;
+}
+
+main[data-theme="dark"] #opportunities label input {
+  color: #e3eadf !important;
+}
+
+main[data-theme="dark"] #opportunities > div > div[aria-label="Filter by category"] button:not([aria-pressed="true"]) {
+  border-color: #354033 !important;
+  background: #1d271e !important;
+  color: #bcc7b8 !important;
+}
+
+main[data-theme="dark"] #opportunities > div > div[role="note"] {
+  border-color: #554a32 !important;
+  background: #292519 !important;
+  color: #d1c49f !important;
+}
+
+main[data-theme="dark"] #opportunities [role="status"] {
+  border-color: #40563a !important;
+  background: #202d20 !important;
+  color: #cee0c3 !important;
+}
+
+main[data-theme="dark"] #opportunities article {
+  border-color: #303b2e !important;
+  background: #1b251c !important;
+}
+
+main[data-theme="dark"] #opportunities article > div:last-child > h3,
+main[data-theme="dark"] #opportunities article > div:last-child > div p:nth-child(2) {
+  color: #e3eadf !important;
+}
+
+main[data-theme="dark"] #opportunities article > div:last-child > div.h-px {
+  background: #344031 !important;
+}
+
+main[data-theme="dark"] #opportunities article button[aria-label^="Save"] {
+  border-color: #647260 !important;
+  background: #253024 !important;
+  color: #d0ddc7 !important;
+}
+
+main[data-theme="dark"] #opportunities article > div:last-child > button {
+  background: #293728 !important;
+  color: #ccddc1 !important;
+}
+
+main[data-theme="dark"] #opportunities article > div:last-child > button:hover {
+  background: #456448 !important;
+  color: #fff !important;
+}
+
+main[data-theme="dark"] #opportunities > div > div.border-dashed {
+  border-color: #44513f !important;
+  background: #1b251c !important;
+}
+
+main[data-theme="dark"] #opportunities > div > div.border-dashed p:first-child {
+  color: #e1e9dc !important;
+}
+
+main[data-theme="dark"] #apply {
+  border-color: #2c372b !important;
+  background: #141c15 !important;
+}
+
+main[data-theme="dark"] #apply > div > div:last-child {
+  border-color: #303c2f !important;
+  background: #1b251c !important;
+}
+
+main[data-theme="dark"] #apply > div > div:last-child > div {
+  border-color: #354032 !important;
+}
+
+main[data-theme="dark"] #apply label {
+  color: #d5dfcf !important;
+}
+
+main[data-theme="dark"] #apply input:not([type="checkbox"]),
+main[data-theme="dark"] #apply select,
+main[data-theme="dark"] #apply textarea {
+  border-color: #3b4738 !important;
+  background: #141c15 !important;
+  color: #e5ece0 !important;
+  color-scheme: dark;
+}
+
+main[data-theme="dark"] #apply input::placeholder,
+main[data-theme="dark"] #apply textarea::placeholder {
+  color: #96a18f !important;
+}
+
+main[data-theme="dark"] #apply select option {
+  background: #1b251c;
+  color: #e5ece0;
+}
+
+main[data-theme="dark"] #apply .bg-\[\#eff2e9\] {
+  background: #273326 !important;
+  color: #ccddc1 !important;
+}
+
+main[data-theme="dark"] #apply form > p:last-child,
+main[data-theme="dark"] #apply form > label span {
+  color: #aab5a5 !important;
+}
+
+main[data-theme="dark"] #apply form > button[type="submit"] {
+  background: #456448 !important;
+  color: #fff !important;
+}
+
+main[data-theme="dark"] #apply form > p[role="alert"] {
+  border-color: #633c35 !important;
+  background: #31211f !important;
+  color: #f0b8ac !important;
+}
+
+main[data-theme="dark"] #how-it-works li {
+  border-color: #303b2e !important;
+  background: #1b251c !important;
+}
+
+main[data-theme="dark"] footer {
+  border-color: #2c372b !important;
+  background: #151d16 !important;
 }

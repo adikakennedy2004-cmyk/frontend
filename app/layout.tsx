@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -13,17 +11,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kennedy Adika | Developer Portfolio",
-  description: "A snapshot of Kennedy Adika's frontend skills, tools, and approach to building for the web.",
+  title: "Mwangaza | Scholarship opportunities for your next chapter",
+  description:
+    "Explore scholarship opportunities, check eligibility, and apply online. Your next chapter starts here.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={cn("h-full", "antialiased", geistMono.variable, inter.variable)}
     >
-      <body className="min-h-full flex flex-col bg-[#0d120f] text-[#edf1eb]">{children}</body>
+      <body className="min-h-full bg-[#faf9f6] font-sans text-[#20291f]">{children}</body>
     </html>
   );
 }
